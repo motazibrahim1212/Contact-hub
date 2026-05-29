@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ===== META DATA ===== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== BOOTSTRAP CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- ===== FONT AWESOME ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- ===== CUSTOM CSS ===== -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Contact Hub</title>
+  </head>
+
+  <body>
+    <!-- ===== NAVBAR START ===== -->
+    <nav
+      class="navbar custom-navbar py-4 border-bottom border-secondary border-opacity-25 bg-light"
+    >
+      <div class="container">
+        <!-- LEFT SIDE (LOGO + TITLE) -->
+        <div class="d-flex align-items-center justify-content-center gap-2">
+          <span class="rounded-4 p-3 my-Icon">
+            <i class="fa-solid fa-contact-book m-auto fs-4 text-light"></i>
+          </span>
+
+          <div class="text-center">
+            <h1 class="text-black fw-bolder fs-3 m-0">
+              Contact <span class="main-c">Hub</span>
+            </h1>
+            <p class="text-secondary m-0">Smart Contact Manager</p>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE (ACTIONS + PROFILE) -->
+        <div class="d-flex align-items-center gap-4">
+          <!-- ADD CONTACT BUTTON -->
+          <button class="btn custom-btn fw-bold addBtn">
+            <i class="fa-solid fa-plus"></i> Add Contact
+          </button>
+
+          <!-- ICONS -->
+          <a href="#"><i class="fa-solid fa-bell nav-icon"></i></a>
+          <a href="#"><i class="fa-solid fa-gear nav-icon"></i></a>
+
+          <!-- USER AVATAR -->
+          <img src="images/1.jpg" class="avatar" />
+        </div>
+      </div>
+    </nav>
+    <!-- ===== NAVBAR END ===== -->
+
+    <!-- ===== INFO CARDS SECTION START ===== -->
+    <section class="info-Cards py-5">
+  <div class="container">
+    <div class="row g-3">
+
+      <!-- TOTAL -->
+      <div class="col-12 col-md-4">
+        <div class="rounded-4 d-flex gap-2 align-items-center border border-light-subtle py-3 bg-white px-3">
+          <span class="bg-primary shadow rounded-4 p-2">
+            <i class="fa-solid fa-user-group text-light"></i>
+          </span>
+          <div>
+            <p class="m-0 text-secondary fw-bolder">Total</p>
+            <h3 class="m-0 fw-bold totalCounter">0</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAVORITE -->
+      <div class="col-12 col-md-4">
+        <div class="rounded-4 d-flex gap-2 align-items-center border border-light-subtle py-3 bg-white px-3">
+          <span class="bg-warning shadow rounded-4 p-2">
+            <i class="fa-solid fa-star text-light"></i>
+          </span>
+          <div>
+            <p class="m-0 text-secondary fw-bolder">Favorite</p>
+            <h3 class="m-0 fw-bold favoriteCounter">0</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMERGENCY -->
+      <div class="col-12 col-md-4">
+        <div class="rounded-4 d-flex gap-2 align-items-center border border-light-subtle py-3 bg-white px-3">
+          <span class="bg-danger shadow rounded-4 p-2">
+            <i class="fa-solid fa-heart-pulse text-light"></i>
+          </span>
+          <div>
+            <p class="m-0 text-secondary fw-bolder">Emergency</p>
+            <h3 class="m-0 fw-bold emergencyCounter">0</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <!-- ===== INFO CARDS SECTION END ===== -->
+
+    <!-- ===== CONTACTS SECTION START ===== -->
+    <section class="py-2 contacts">
+      <div class="container">
+        <div class="row justify-content-between g-4">
+          <!-- LEFT SIDE (CONTACT LIST + SEARCH) -->
+          <div class="col-md-8">
+            <h2 class="fw-bold mb-3">All Contacts</h2>
+            <p class="text-secondary mb-4 small manageCounter">
+              
+            </p>
+
+            <!-- SEARCH INPUT -->
+            <div class="input-group border-secondary-subtle text-secondary">
+              <span class="input-group-text bg-body border-0">
+                <i class="fa-solid fa-search"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control form-control-lg fs-6 border-0 search" 
+                placeholder="Search by name, phone, or email..."
+                oninput="search()"
+              />
+            </div>
+            <!-- ////////////// -->
+            <div class="container">
+              <div class="row contactsContainer">
+               
+              </div>
+            </div>
+            <!-- ///////// -->
+          </div>
+
+          <!-- RIGHT SIDE (SIDEBAR CARDS) -->
+          <div class="col-md-4 pe-0">
+            <!-- FAVORITES CARD -->
+            <div
+              class="card mb-3 w-auto shadow border border-light-subtle rounded-4"
+            >
+              <div
+                class="card-head bg-warning-subtle bg-opacity-25 rounded-top-4 column-gap-2 d-flex p-3 align-items-center"
+              >
+                <span class="bg-warning shadow h-25 p-2 rounded-3">
+                  <i class="fa-solid fa-star text-white p-0 fs-5"></i>
+                </span>
+                <div>
+                  <h5 class="card-title fw-bold fs-6">Favorites</h5>
+                  <p class="card-text text-secondary m-0 small">
+                    Quick access to starred contacts
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-body " id="favoriteCard">
+                 <div class="d-flex rounded-4 bg-secondary-subtle align-items-center gap-2 p-3 ">
+                  <span class="badge  bg-warning fs-5">M</span>
+                  <p class="m-0">01121423203</p>
+
+                 </div>
+              </div>
+            </div>
+
+            <!-- EMERGENCY CARD -->
+            <div
+              class="card mb-3 w-auto shadow border border-light-subtle rounded-4"
+            >
+              <div
+                class="card-head bg-danger-subtle bg-opacity-25 rounded-top-4 column-gap-2 d-flex p-3 align-items-center"
+              >
+                <span class="bg-danger shadow h-25 p-2 rounded-3">
+                  <i class="fa-solid fa-heart-pulse text-white p-0 fs-5"></i>
+                </span>
+                <div>
+                  <h5 class="card-title fw-bold fs-6">Emergency</h5>
+                  <p class="card-text text-secondary m-0 small">
+                    Important contacts for urgent calls
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-body  " id="emergencyCard">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== CONTACTS SECTION END ===== -->
+
+    <div
+      class="lightBox d-none position-fixed top-0 bottom-0 end-0 start-0 bg-dark bg-opacity-75"
+    >
+      <div
+        class="myForm d-flex justify-content-center align-items-center "
+      >
+        <div
+          class="form bg-light rounded-4 border border-light-subtle p-4 position-relative"
+        >
+          <i
+            class="fa-solid fa-x position-absolute top-0 end-0 m-3 text-secondary fw-bold closeBtn"
+          ></i>
+          <h2
+            class="heading border-bottom border-dark-subtle fs-5 fw-bold pb-2 mb-4"
+          >
+            <i class="fa-solid fa-circle-plus text-primary fs-5 mb-0"></i> Add
+            New Contact
+          </h2>
+
+          <label for="name">Full Name *</label>
+          <input
+            class="form form-control mt-1 mb-2 w-100"
+            type="text"
+            placeholder="Enter Full Name"
+            id="fullName"
+          />
+          <p class="small text-danger m-0 d-none" id="nameError">Enter Valid Name</p>
+          <label for="Phone">Phone Number *</label>
+          <input
+            class="form form-control mt-1 mb-2 w-100"
+            type="tel"
+            placeholder="e.g., 01012345678"
+             id="number"
+          />
+          <p class="small text-danger m-0 d-none" id="numberError">Enter Valid Number</p>
+          <label for="Email">Email Address </label>
+          <input
+            class="form form-control mt-1 mb-2 w-100"
+            type="email"
+            placeholder="name@example.com"
+             id="email"
+          />
+          <p class="small text-danger m-0  d-none" id="emailError">Enter Valid Email</p>
+          <label for="Address">Address </label>
+          <input
+            class="form form-control mt-1 mb-2 w-100"
+            type="text"
+            placeholder="Enter address"
+            id="address"
+          />
+          <label for="">Groub</label>
+          <select class="form-control mt-1 mb-2" name="" id="groub">
+            <option value="Family">Family</option>
+            <option value="Friends">Friends</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="">Any Notes *</label>
+          <textarea
+            cols="4"
+            class="form-control mt-1 mb-2"
+            name=""
+            id="notes"
+            placeholder="Add notes about this contact"
+          ></textarea>
+          <span class="py-1 d-flex gap-1">
+            <input type="checkbox" class="form-check-input" id="favoriteCheck" />
+            <p class="mb-0">
+              <i class="fa-solid fa-star text-warning fs-6 mb-0"></i> Favorite
+            </p>
+            <input type="checkbox" class="form-check-input" id="emergencyCheck"/>
+            <p class="mb-0">
+              <i class="fa-solid fa-heart-pulse text-danger fs-6 mb-0"></i>
+              Emergency
+            </p>
+          </span>
+          <div class="myButtons d-flex justify-content-center gap-2 pt-4">
+            <button
+              class="btn closeBtn btn-outline-secondary border-dark-subtle w-50"
+            >
+              Close
+            </button>
+            <button class="saveBtn btn custom-btn w-50">Save Contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/myJs.js"></script>
+  </body>
+</html>

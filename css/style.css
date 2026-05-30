@@ -165,3 +165,8 @@ input:focus , textarea:focus , select:focus{
   background-color: #f8d7da;
   color: #dc3545;
 }
+@media(max-width:768px){
+  .form{
+    width: 80%;
+  }
+}
